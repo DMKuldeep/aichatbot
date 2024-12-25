@@ -1,0 +1,52 @@
+/* Full height for the sidebar */
+.sidebar {
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Adjust spacing for buttons */
+
+
+.sidebar .btn.active {
+  color: white;
+}
+
+/* Main content area styling */
+.content-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.content-area {
+  background-color: black;
+  color: white;
+}
+/* Remove focus outline from button */
+button:focus {
+  outline: none; /* Remove the default outline */
+  box-shadow: none; /* Remove the shadow */
+}
+
+/* Optional: Remove borders around the image in the button */
+button img {
+  border: none; /* Remove border from images inside buttons */
+}
+
+.icon-image{
+  border: none; 
+  outline: none; /* Remove the default outline */
+  box-shadow: none; 
+}
+
+
+
+
+
+
+
+
