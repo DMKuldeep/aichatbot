@@ -7,9 +7,7 @@
   justify-content: space-between;
 }
 
-/* Adjust spacing for buttons */
-
-
+/* Sidebar button styles */
 .sidebar .btn.active {
   color: white;
 }
@@ -18,35 +16,60 @@
 .content-area {
   display: flex;
   align-items: center;
-  justify-content: center;
   height: 100%;
 }
 
-.content-area {
-  background-color: black;
-  color: white;
-}
 /* Remove focus outline from button */
 button:focus {
-  outline: none; /* Remove the default outline */
-  box-shadow: none; /* Remove the shadow */
+  outline: none;
+  box-shadow: none;
 }
 
-/* Optional: Remove borders around the image in the button */
+/* Remove borders around the image in the button */
 button img {
-  border: none; /* Remove border from images inside buttons */
+  border: none;
 }
 
-.icon-image{
-  border: none; 
-  outline: none; /* Remove the default outline */
-  box-shadow: none; 
+.icon-image {
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
+/* Responsive Title Section */
+.automation {
+  font-family: "Inter", sans-serif;
+  font-size: 2.5rem;
+  /* font-weight: 600; */
+  line-height: 1.3;
+  /* letter-spacing: -0.02em; */
+  padding-left: 20px;
+  padding-top: 16%;
+}
 
+@media (min-width: 768px) {
+  .automation {
+    font-size: 4rem; /* Larger font for tablets */
+    padding-left: 50px;
+  }
+}
 
+@media (min-width: 1200px) {
+  .automation {
+    font-size: 5.5rem; /* Largest font for desktops */
+    padding-left: 73px;
+  }
+}
 
+/* Logo Section Responsiveness */
+.imagelogo {
+  width: auto; /* Adjust to content width automatically */
+  height: auto;
+  margin-left: 0; /* Centered by default on small devices */
+}
 
-
-
-
+@media (min-width: 768px) {
+  .imagelogo {
+    margin-left: -950px; /* Only offset for larger screens */
+  }
+}
