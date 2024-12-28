@@ -47,6 +47,11 @@ button img {
   padding-top: 16%;
 }
 
+.no-arrow::after {
+  display: none !important;
+}
+
+
 @media (min-width: 768px) {
   .automation {
     font-size: 4rem; /* Larger font for tablets */
