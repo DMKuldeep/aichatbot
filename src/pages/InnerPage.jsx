@@ -22,10 +22,13 @@ const Chatbot = () => {
         <div className="col-12 text-center text-md-start d-flex flex-column">
           {/* Logo Section */}
           <div
-            className="d-flex flex-column flex-md-row align-items-center justify-content-center position-relative"
+            className="d-flex flex-row justify-content-flex-start align-items-center position-relative"
             style={{ top: "20px", width: "100%" }}
           >
-            <span className="imagelogo text-center mb-3 mb-md-0">
+            <span
+              className="d-flex align-items-center"
+              style={{ marginLeft: "71px" }}
+            >
               <img
                 src="/Images/Logomark.png"
                 alt="Logomark"
@@ -52,9 +55,12 @@ const Chatbot = () => {
       </div>
     ),
     icon2: (
-      <div className="row vh-100 m-0">
+      <div
+        className="row vh-100 m-0"
+        style={{ backgroundColor: "white", marginTop: "10px" }}
+      >
         {/* Sidebar Section (col-md-3) */}
-        <div className="col-md-3 bg-light p-3 d-flex flex-column" style={{ paddingTop: '0' }}>
+        <div className="col-md-3 bg-light p-3 d-flex flex-column">
           {/* Search Bar with Lens and Filter */}
           <div className="d-flex align-items-center mb-3">
             {/* Search Bar with Lens Icon in Placeholder */}
@@ -70,17 +76,21 @@ const Chatbot = () => {
                 style={{ boxShadow: "none" }}
               />
             </div>
-        
+
             {/* Filter Icon and Text with Border */}
             <div
               className="border d-flex align-items-center rounded px-2 ms-3"
-              style={{ borderColor: "#d9d9d9", height: "37px", backgroundColor: "white" }}
+              style={{
+                borderColor: "#d9d9d9",
+                height: "37px",
+                backgroundColor: "white",
+              }}
             >
               <i className="bi bi-filter text-muted me-2"></i>
               <span>Filter</span>
             </div>
           </div>
-        
+
           {/* Image and Text Section */}
           <div
             className="d-flex align-items-center border-top border-bottom py-2"
@@ -93,7 +103,7 @@ const Chatbot = () => {
             />
             <span>Mashreq NeoAI</span>
           </div>
-        
+
           {/* Chat History Icon */}
           <div className="container mt-4">
             {/* Accordion Section */}
@@ -119,7 +129,7 @@ const Chatbot = () => {
                       Chat 4: Thank you for your help!
                     </li>
                   </ul>
-        
+
                   {/* Three Dots Dropdown */}
                   <div className="d-flex justify-content-end mt-2">
                     <Dropdown align="end">
@@ -139,13 +149,23 @@ const Chatbot = () => {
               </Accordion.Item>
             </Accordion>
           </div>
-        
+
           {/* Bottom Buttons */}
-          <div className="mt-auto">
-            <div style={{borderTop:"0.5px solid #d9d9d9", paddingBottom:"20px" }}></div>
+          <div className="mt-auto mt-3">
+            <div
+              style={{
+                borderTop: "0.5px solid #d9d9d9",
+                paddingBottom: "20px",
+              }}
+            ></div>
             <div
               className="d-flex border-top border-bottom py-2 mb-2 justify-content-center"
-              style={{ borderColor: "#d9d9d9", marginBottom: "10px" ,border:"0.5px solid #d9d9d9", borderRadius:'10px' }}
+              style={{
+                borderColor: "#d9d9d9",
+                marginBottom: "10px",
+                border: "0.5px solid #d9d9d9",
+                borderRadius: "10px",
+              }}
             >
               <img
                 src="/Images/button.png"
@@ -156,7 +176,11 @@ const Chatbot = () => {
             </div>
             <div
               className="d-flex align-items-center border-top border-bottom py-2 justify-content-center"
-              style={{ borderColor: "#d9d9d9" ,border:"0.5px solid #d9d9d9",borderRadius:'10px' }} 
+              style={{
+                borderColor: "#d9d9d9",
+                border: "0.5px solid #d9d9d9",
+                borderRadius: "10px",
+              }}
             >
               <img
                 src="/Images/hourglass.png"
@@ -167,19 +191,100 @@ const Chatbot = () => {
             </div>
           </div>
         </div>
-      
+
         {/* Main Content Section (col-md-9) */}
         <div className="col-md-9">
-          <textarea
-            className="form-control"
-            rows="20"
-            placeholder="Main content area"
-          ></textarea>
+          {/* Top Bar */}
+          <div className="d-flex justify-content-between align-items-center py-2 px-3 border-top border-bottom">
+            <div className="d-flex align-items-center">
+              <img
+                src="/Images/nameicon.png"
+                alt="placeholder"
+                className="me-2"
+              />
+              <span>Mashreq NeoAI</span>
+            </div>
+            <div className="d-flex" style={{ gap: "10px" }}>
+              <img src="/images/buttonbellicon.png" alt="bellbutton" />
+              <img src="/images/buttonplus.png" alt="plus" />
+            </div>
+          </div>
+
+          {/* Chat Messages */}
+          <div className="content-section px-3 mt-3">
+            <div
+              className="chat-messages overflow-auto"
+              style={{ maxHeight: "calc(100vh - 160px)" }}
+            >
+              <div className="d-flex flex-column align-items-start mb-3">
+                <div
+                  className="p-2 bg-light rounded border"
+                  style={{ maxWidth: "70%" }}
+                >
+                  Hello, how are you?
+                </div>
+                <span className="small text-muted mt-1">10:30 AM</span>
+              </div>
+              <div className="d-flex flex-column align-items-end mb-3">
+                <div
+                  className="p-2 bg-primary text-white rounded border"
+                  style={{ maxWidth: "70%" }}
+                >
+                  I'm good, thank you! How about you?
+                </div>
+                <span className="small text-muted mt-1">10:32 AM</span>
+              </div>
+            </div>
+
+            {/* Input Section */}
+            <div className="col-md-12 sendbox">
+              {/* Input Box */}
+              <div
+                className="d-flex flex-column mt-3 border rounded py-2 px-3"
+                style={{ borderColor: "#d9d9d9" }}
+              >
+                {/* Message Input */}
+                <input
+                  type="text"
+                  className="form-control border-0 mb-2"
+                  placeholder="Message NeoAI"
+                />
+
+                {/* Toolbar Section */}
+                <div className="d-flex align-items-center justify-content-between">
+                  {/* Left Icons */}
+                  <div className="d-flex align-items-center">
+                    {/* File Icon */}
+                    <i
+                      className="bi bi-paperclip me-3"
+                      style={{ fontSize: "1.2rem", cursor: "pointer" }}
+                    ></i>
+                    {/* @ Symbol */}
+                    <i
+                      className="bi bi-at me-3"
+                      style={{ fontSize: "1.2rem", cursor: "pointer" }}
+                    ></i>
+                    {/* Separator */}
+                    <span
+                      className="border-end me-3"
+                      style={{ height: "20px", borderWidth: "0.5px" }}
+                    ></span>
+                    {/* Voice Record Icon */}
+                    <i
+                      className="bi bi-mic me-3"
+                      style={{ fontSize: "1.2rem", cursor: "pointer" }}
+                    ></i>
+                  </div>
+
+                  {/* Send Icon */}
+                 <img src="images/sendmessagebutton.png" alt="Send Message" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     ),
-    
-    
 
     icon3: (
       <div className="row">
