@@ -12,7 +12,7 @@ export default function register() {
                   if (navigator.serviceWorker.controller) {
                     console.log("New content is available; please refresh."); // eslint-disable-line no-console
                   } else {
-                    console.log("Content is cached for offline use."); // eslint-disable-line no-console
+                    console.log("Content is cached for offline use.");
                   }
                 }
               };
