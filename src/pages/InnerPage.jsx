@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import "./InnerPage.css"; // Include your custom CSS for styling
 import { Accordion, Dropdown } from "react-bootstrap";
+import MixedChart from "./Chart";
+// import Chart from 'chart.js/auto';
 
+import { Worker, Viewer } from "@react-pdf-viewer/core";
+import "@react-pdf-viewer/core/lib/styles/index.css";
 const Chatbot = () => {
   const [activeIcon, setActiveIcon] = useState("icon1");
   const [showSelect, setShowSelect] = useState(false);
@@ -213,26 +217,125 @@ const Chatbot = () => {
           {/* Chat Messages */}
           <div className="content-section px-3 mt-3">
             <div
-              className="chat-messages overflow-auto"
-              style={{ maxHeight: "calc(100vh - 160px)" }}
+              className="container py-3"
+              style={{
+                height: "80vh",
+                border: "1px solid #ddd",
+                borderRadius: "8px",
+              }}
             >
-              <div className="d-flex flex-column align-items-start mb-3">
-                <div
-                  className="p-2 bg-light rounded border"
-                  style={{ maxWidth: "70%" }}
-                >
-                  Hello, how are you?
+              <div
+                className="chat-messages overflow-auto p-3"
+                style={{
+                  maxHeight: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                {/* Left-aligned first message */}
+                <div className="d-flex flex-column align-items-start mb-3">
+                  <div
+                    className="p-2 bg-light rounded border"
+                    style={{ maxWidth: "80%" }}
+                  >
+                    Hello! Welcome to the chat.
+                  </div>
                 </div>
-                <span className="small text-muted mt-1">10:30 AM</span>
-              </div>
-              <div className="d-flex flex-column align-items-end mb-3">
-                <div
-                  className="p-2 bg-primary text-white rounded border"
-                  style={{ maxWidth: "70%" }}
-                >
-                  I'm good, thank you! How about you?
+
+                {/* Right-aligned second message */}
+                <div className="d-flex flex-column align-items-end mb-3">
+                  <div
+                    className="p-2 text-white rounded border"
+                    style={{ maxWidth: "70%", backgroundColor: "#7F56D9" }}
+                  >
+                    Thank you! How can I help you today?
+                  </div>
                 </div>
-                <span className="small text-muted mt-1">10:32 AM</span>
+
+                {/* "TODAY" centered divider */}
+                <div className="d-flex justify-content-center my-3">
+                  <span
+                    className="px-3 py-1 text-white rounded"
+                    style={{
+                      backgroundColor: "#6c757d",
+                      fontSize: "0.85rem",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    TODAY
+                  </span>
+                </div>
+
+                {/* Left-aligned MixedChart component */}
+                <div className="d-flex flex-column align-items-start mb-3">
+                  <div
+                    className="p-2 bg-light rounded border"
+                    style={{ maxWidth: "80%" }}
+                  >
+                    <MixedChart />
+                  </div>
+                </div>
+
+                {/* Right-aligned third message */}
+                <div className="d-flex flex-column align-items-end mb-3">
+                  <div
+                    className="p-2 text-white rounded border"
+                    style={{ maxWidth: "70%", backgroundColor: "#7F56D9" }}
+                  >
+                    That chart looks interesting. Can you explain more?
+                  </div>
+                </div>
+
+                {/* Left-aligned fourth message */}
+                <div className="d-flex flex-column align-items-start mb-3">
+                  <div
+                    className="p-2 bg-light rounded border"
+                    style={{ maxWidth: "80%" }}
+                  >
+                    Sure! The chart displays a combination of bar and line
+                    datasets.
+                  </div>
+                </div>
+
+                <div className="d-flex flex-column align-items-end mb-3">
+                  <div
+                    className="p-2 text-white rounded border"
+                    style={{ maxWidth: "70%", backgroundColor: "#7F56D9" }}
+                  >
+                    That chart looks interesting. Can you explain more?
+                  </div>
+                </div>
+                {/* PDF Message with Download Feature */}
+                <div className="d-flex flex-column align-items-start mb-3">
+                  <div
+                    style={{
+                      height: "300px",
+                      overflow: "auto",
+                      maxWidth: "50%",
+                      border: "1px solid #ddd",
+                      borderRadius: "8px",
+                      padding: "10px",
+                    }}
+                  >
+                    <Worker
+                      workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}
+                    >
+                      <Viewer fileUrl="Images/kuldeep-cv1.pdf" />
+                    </Worker>
+                  </div>
+
+                  {/* Download Button */}
+                  <div className="mt-2 text-center">
+                    <a
+                      href="Images/kuldeep-cv1.pdf"
+                      download
+                      className="btn btn-primary"
+                      style={{ fontSize: "0.9rem" }}
+                    >
+                      Download PDF
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -246,7 +349,7 @@ const Chatbot = () => {
                 {/* Message Input */}
                 <input
                   type="text"
-                  className="form-control border-0 mb-2"
+                  className="form-control border-0 mb-2 messegeneoai"
                   placeholder="Message NeoAI"
                 />
 
@@ -277,7 +380,7 @@ const Chatbot = () => {
                   </div>
 
                   {/* Send Icon */}
-                 <img src="images/sendmessagebutton.png" alt="Send Message" />
+                  <img src="images/sendmessagebutton.png" alt="Send Message" />
                 </div>
               </div>
             </div>
@@ -390,46 +493,130 @@ const Chatbot = () => {
 
   return (
     <div className="container-fluid">
-      <div className="row">
+      <div className="row dashboardbg" style={{ height: "100vh" }}>
         {/* Sidebar Column */}
-        <div className="col-md-1 h-100vh sidebar bg-light">
+
+        <div className="col-md-1">
+
+        
+        <div className="d-flex flex-column align-items-center sidebar">
           <div className="d-flex flex-column gap-3 mt-3">
             <button
-              className={`btn ${activeIcon === "icon1" ? "active" : ""}`}
+              className={`btn outline-0 border-0 ${
+                activeIcon === "icon1" ? "active" : ""
+              }`}
               onClick={() => setActiveIcon("icon1")}
             >
               <img
-                src="/Images/Logomark1.png"
-                alt="Logo"
-                className="icon-image"
+                src="/Images/Logomark.png"
+                alt="Logomark"
+                className=""
+                style={{ height: "32px", width: "32px" }}
               />
             </button>
             <button
-              className={`btn ${activeIcon === "icon2" ? "active" : ""}`}
+              className={`btn outline-0 border-0 d-flex justify-content-center align-items-center ${
+                activeIcon === "icon2" ? "active" : ""
+              }`}
               onClick={() => setActiveIcon("icon2")}
             >
               <img
-                src="/Images/Logomark2.png"
+                src="/Images/home-02.svg"
                 alt="Logo"
                 className="icon-image"
               />
             </button>
             <button
-              className={`btn ${activeIcon === "icon3" ? "active" : ""}`}
+              className={`btn outline-0 border-0 d-flex justify-content-center align-items-center ${
+                activeIcon === "icon3" ? "active" : ""
+              }`}
               onClick={() => setActiveIcon("icon3")}
             >
               <img
-                src="/Images/Logomark3.png"
+                src="/Images/grid-01.svg"
                 alt="Logo"
                 className="icon-image"
               />
             </button>
+
             <button
-              className={`btn ${activeIcon === "icon4" ? "active" : ""}`}
+              className={`btn outline-0 border-0 d-flex justify-content-center align-items-center ${
+                activeIcon === "icon10" ? "active" : ""
+              }`}
+              onClick={() => setActiveIcon("icon10")}
+            >
+              <img src="/Images/minus.svg" alt="Logo" className="icon-image" />
+            </button>
+
+            <button
+              className={`btn outline-0 border-0 d-flex justify-content-center align-items-center ${
+                activeIcon === "icon4" ? "active" : ""
+              }`}
               onClick={() => setActiveIcon("icon4")}
             >
               <img
-                src="/Images/Logomark4.png"
+                src="/Images/dataflow-03.svg"
+                alt="Logo"
+                className="icon-image"
+              />
+            </button>
+
+            <button
+              className={`btn outline-0 border-0 d-flex justify-content-center align-items-center ${
+                activeIcon === "icon12" ? "active" : ""
+              }`}
+              onClick={() => setActiveIcon("icon12")}
+            >
+              <img
+                src="/Images/database-01.svg"
+                alt="Logo"
+                className="icon-image"
+              />
+            </button>
+
+            <button
+              className={`btn outline-0 border-0 d-flex justify-content-center align-items-center ${
+                activeIcon === "icon13" ? "active" : ""
+              }`}
+              onClick={() => setActiveIcon("icon13")}
+            >
+              <img
+                src="/Images/rocket-02.svg"
+                alt="Logo"
+                className="icon-image"
+              />
+            </button>
+
+            <button
+              className={`btn outline-0 border-0 d-flex justify-content-center align-items-center ${
+                activeIcon === "icon10" ? "active" : ""
+              }`}
+              onClick={() => setActiveIcon("icon10")}
+            >
+              <img src="/Images/minus.svg" alt="Logo" className="icon-image" />
+            </button>
+
+            <button
+              className={`btn outline-0 border-0 d-flex justify-content-center align-items-center ${
+                activeIcon === "icon14" ? "active" : ""
+              }`}
+              onClick={() => setActiveIcon("icon14")}
+            >
+              <img
+                src="/Images/horizontal-bar-chart-01.svg"
+                alt="Logo"
+                className="icon-image"
+              />
+            </button>
+
+            <button
+              className={`btn outline-0 border-0 d-flex justify-content-center align-items-center ${
+                activeIcon === "icon14" ? "active" : ""
+              }`}
+              onClick={() => setActiveIcon("icon14")}
+            >
+              <img
+                src="/Images/users-01.svg"
                 alt="Logo"
                 className="icon-image"
               />
@@ -437,45 +624,58 @@ const Chatbot = () => {
           </div>
           <div className="d-flex flex-column gap-3 mt-auto mb-3">
             <button
-              className={`btn ${activeIcon === "icon5" ? "active" : ""}`}
+              className={`btn outline-0 border-0 d-flex justify-content-center align-items-center ${
+                activeIcon === "icon5" ? "active" : ""
+              }`}
               onClick={() => setActiveIcon("icon5")}
             >
               <img
-                src="/Images/Logomark5.png"
+                src="/Images/help-circle.svg"
                 alt="Logo"
                 className="icon-image"
               />
             </button>
             <button
-              className={`btn ${activeIcon === "icon6" ? "active" : ""}`}
+              className={`btn outline-0 border-0 d-flex justify-content-center align-items-center ${
+                activeIcon === "icon6" ? "active" : ""
+              }`}
               onClick={handleClick}
             >
               <img
-                src="/Images/Logomark6.png"
+                src="/Images/settings-01.svg"
                 alt="Logo"
                 className="icon-image"
               />
-              {showSelect && (
-                <select>
-                  <option value="option1">Help</option>
-                  <option value="option2">Policy</option>
-                  <option value="option3">Logout</option>
-                </select>
-              )}
             </button>
             <button
-              className={`btn ${activeIcon === "icon7" ? "active" : ""}`}
+              className={`btn outline-0 border-0 d-flex justify-content-center align-items-center ${
+                activeIcon === "icon8" ? "active" : ""
+              }`}
+              onClick={() => setActiveIcon("icon8")}
+            >
+              {/* <i class="bi bi-bell icon-image"></i> */}
+              <img
+                src="/Images/bell-01.svg"
+                alt="Logo"
+                className="icon-image"
+              />
+            </button>
+            <button
+              className={`btn outline-0 border-0 d-flex justify-content-center align-items-center ${
+                activeIcon === "icon7" ? "active" : ""
+              }`}
               onClick={() => setActiveIcon("icon7")}
             >
               <img src="/Images/Avatar.png" alt="Logo" className="icon-image" />
             </button>
           </div>
         </div>
+        </div>
 
         {/* Main Content Column */}
-        <div className="col-md-11 h-100vh">
+        <div className="col-md-11">
           {/* Render Dynamic Content Based on Active Icon */}
-          <div className="p-3">{iconContent[activeIcon]}</div>
+          <div className="p-3 restsection">{iconContent[activeIcon]}</div>
         </div>
       </div>
     </div>

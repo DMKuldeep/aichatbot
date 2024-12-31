@@ -1,10 +1,15 @@
 /* Full height for the sidebar */
 .sidebar {
-  background-color: white;
+  background-color: white !important;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border: 0.5px solid #d9d9d9;
+  width: 60px;
+  border-radius:12px;
+
+
 }
 
 /* Sidebar button styles */
@@ -34,8 +39,19 @@ button img {
   border: none;
   outline: none;
   box-shadow: none;
-}
 
+  display: flex;
+  width: 20px;
+  height: 20px;
+  justify-content: center;
+  align-items: center;
+  
+}
+.dashboardbg{
+padding: 4px;
+background: var(--Gray-100, #F5F5F5);
+box-shadow: -4px 0px 20px 4px rgba(10, 13, 18, 0.06) inset;
+}
 /* Responsive Title Section */
 .automation {
   font-family: "Inter", sans-serif;
@@ -46,13 +62,17 @@ button img {
   padding-left: 20px;
   padding-top: 16%;
 }
-
+.restsection{
+  height: 100%;
+  
+}
 .no-arrow::after {
   display: none !important;
 }
 
 .vh-100 {
-  height: 100dvh; /* Use dynamic viewport units */
+  height: 100dvh;
+  /* Use dynamic viewport units */
 }
 
 .top-bar.d-flex.align-items-center.justify-content-between.border-top.border-bottom {
@@ -69,32 +89,55 @@ button img {
   padding-top: 380px;
 }
 
+.messegeneoai {
+  border: none !important;
+}
+.pdf-viewer .watermark {
+  display: none;
+}
+
+/* Remove the outline and border when buttons are focused */
+.sidebar .btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove border on active state as well */
+.sidebar .btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
 
 
 
 @media (min-width: 768px) {
   .automation {
-    font-size: 4rem; /* Larger font for tablets */
+    font-size: 4rem;
+    /* Larger font for tablets */
     padding-left: 50px;
   }
 }
 
 @media (min-width: 1200px) {
   .automation {
-    font-size: 5.5rem; /* Largest font for desktops */
+    font-size: 5.5rem;
+    /* Largest font for desktops */
     padding-left: 73px;
   }
 }
 
 /* Logo Section Responsiveness */
 .imagelogo {
-  width: auto; /* Adjust to content width automatically */
+  width: auto;
+  /* Adjust to content width automatically */
   height: auto;
-  margin-left: 0; /* Centered by default on small devices */
+  margin-left: 0;
+  /* Centered by default on small devices */
 }
 
 @media (min-width: 768px) {
   .imagelogo {
-    margin-left: -250px; /* Only offset for larger screens */
+    margin-left: -250px;
+    /* Only offset for larger screens */
   }
 }
