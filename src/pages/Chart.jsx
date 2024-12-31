@@ -66,5 +66,4 @@ const MixedChart = () => {
 
   return <Chart type="bar" data={data} options={options} />;
 };
-
 export default MixedChart;
