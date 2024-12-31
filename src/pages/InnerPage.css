@@ -8,44 +8,35 @@
   border: 0.5px solid #d9d9d9;
   width: 60px;
   border-radius:12px;
-
-
 }
-
 /* Sidebar button styles */
 .sidebar .btn.active {
   color: white;
 }
-
 /* Main content area styling */
 .content-area {
   display: flex;
   align-items: center;
   height: 100%;
 }
-
 /* Remove focus outline from button */
 button:focus {
   outline: none;
   box-shadow: none;
 }
-
 /* Remove borders around the image in the button */
 button img {
   border: none;
 }
-
 .icon-image {
   border: none;
   outline: none;
   box-shadow: none;
-
   display: flex;
   width: 20px;
   height: 20px;
   justify-content: center;
   align-items: center;
-  
 }
 .dashboardbg{
 padding: 4px;
@@ -64,7 +55,6 @@ box-shadow: -4px 0px 20px 4px rgba(10, 13, 18, 0.06) inset;
 }
 .restsection{
   height: 100%;
-  
 }
 .no-arrow::after {
   display: none !important;
@@ -84,11 +74,11 @@ box-shadow: -4px 0px 20px 4px rgba(10, 13, 18, 0.06) inset;
   border: 0.5px solid #d9d9d9;
   background-color: #FFFFFF;
 }
-
-.col-md-12.sendbox {
-  padding-top: 380px;
-}
-
+.sendbox {
+  position: absolute;
+  bottom: 0px;
+  width: 946px;
+} 
 .messegeneoai {
   border: none !important;
 }
@@ -107,6 +97,13 @@ box-shadow: -4px 0px 20px 4px rgba(10, 13, 18, 0.06) inset;
   outline: none !important;
   box-shadow: none !important;
 }
+
+.seconsectionbutton{
+  position: absolute;
+  bottom: 0px;
+  width: 20%;
+}
+
 
 
 

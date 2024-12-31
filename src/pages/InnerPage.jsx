@@ -61,7 +61,7 @@ const Chatbot = () => {
     icon2: (
       <div
         className="row vh-100 m-0"
-        style={{ backgroundColor: "white", marginTop: "10px" }}
+        style={{ backgroundColor: "white !important" }}
       >
         {/* Sidebar Section (col-md-3) */}
         <div className="col-md-3 bg-light p-3 d-flex flex-column">
@@ -155,7 +155,8 @@ const Chatbot = () => {
           </div>
 
           {/* Bottom Buttons */}
-          <div className="mt-auto mt-3">
+          <div className="mt-auto seconsectionbutton">
+            <h3>Analytics</h3>
             <div
               style={{
                 borderTop: "0.5px solid #d9d9d9",
@@ -219,8 +220,8 @@ const Chatbot = () => {
             <div
               className="container py-3"
               style={{
-                height: "80vh",
-                border: "1px solid #ddd",
+                height: "70vh",
+                border: "0.5px solid #ddd",
                 borderRadius: "8px",
               }}
             >
@@ -338,8 +339,6 @@ const Chatbot = () => {
                 </div>
               </div>
             </div>
-
-            {/* Input Section */}
             <div className="col-md-12 sendbox">
               {/* Input Box */}
               <div
@@ -384,7 +383,10 @@ const Chatbot = () => {
                 </div>
               </div>
             </div>
+         
           </div>
+             {/* Input Section */}
+            
         </div>
       </div>
     ),
