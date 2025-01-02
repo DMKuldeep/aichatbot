@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./InnerPage.css"; // Include your custom CSS for styling
-import { Accordion, Dropdown } from "react-bootstrap";
+// import { Accordion, Dropdown } from "react-bootstrap";
 import MixedChart from "./Chart";
 // import Chart from 'chart.js/auto';
 
@@ -480,7 +480,7 @@ const Chatbot = () => {
                 {/* Left-aligned first message */}
                 <div className="d-flex flex-column align-items-start mb-3">
                   <div className="p-2" style={{ maxWidth: "80%" }}>
-                    <img src="/Images/chatusericon.png" /> &nbsp; Hello! Welcome
+                    <img src="/Images/chatusericon.png" alt="chatusericon" /> &nbsp; Hello! Welcome
                     to the chat.
                   </div>
                 </div>
@@ -532,7 +532,7 @@ const Chatbot = () => {
                 {/* Left-aligned fourth message */}
                 <div className="d-flex flex-column align-items-start mb-3">
                   <div className="p-2" style={{ maxWidth: "70%" }}>
-                    <img src="/Images/chatusericon.png" /> &nbsp; Sure! The
+                    <img src="/Images/chatusericon.png" alt="usericon" /> &nbsp; Sure! The
                     chart displays a combination of bar and line datasets.
                   </div>
                 </div>
