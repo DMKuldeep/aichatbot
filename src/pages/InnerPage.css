@@ -7,27 +7,32 @@
   justify-content: space-between;
   border: 0.5px solid #d9d9d9;
   width: 60px;
-  border-radius:12px;
+  border-radius: 12px;
 }
+
 /* Sidebar button styles */
 .sidebar .btn.active {
   color: white;
 }
+
 /* Main content area styling */
 .content-area {
   display: flex;
   align-items: center;
   height: 100%;
 }
+
 /* Remove focus outline from button */
 button:focus {
   outline: none;
   box-shadow: none;
 }
+
 /* Remove borders around the image in the button */
 button img {
   border: none;
 }
+
 .icon-image {
   border: none;
   outline: none;
@@ -38,11 +43,13 @@ button img {
   justify-content: center;
   align-items: center;
 }
-.dashboardbg{
-padding: 4px;
-background: var(--Gray-100, #F5F5F5);
-box-shadow: -4px 0px 20px 4px rgba(10, 13, 18, 0.06) inset;
+
+.dashboardbg {
+  padding: 4px;
+  background: var(--Gray-100, #F5F5F5);
+  box-shadow: -4px 0px 20px 4px rgba(10, 13, 18, 0.06) inset;
 }
+
 /* Responsive Title Section */
 .automation {
   font-family: "Inter", sans-serif;
@@ -53,9 +60,11 @@ box-shadow: -4px 0px 20px 4px rgba(10, 13, 18, 0.06) inset;
   padding-left: 20px;
   padding-top: 16%;
 }
-.restsection{
+
+.restsection {
   height: 100%;
 }
+
 .no-arrow::after {
   display: none !important;
 }
@@ -74,14 +83,17 @@ box-shadow: -4px 0px 20px 4px rgba(10, 13, 18, 0.06) inset;
   border: 0.5px solid #d9d9d9;
   background-color: #FFFFFF;
 }
+
 .sendbox {
   position: absolute;
   bottom: 0px;
   width: 946px;
-} 
+}
+
 .messegeneoai {
   border: none !important;
 }
+
 .pdf-viewer .watermark {
   display: none;
 }
@@ -98,11 +110,215 @@ box-shadow: -4px 0px 20px 4px rgba(10, 13, 18, 0.06) inset;
   box-shadow: none !important;
 }
 
-.seconsectionbutton{
-  position: absolute;
-  bottom: 0px;
-  width: 20%;
+
+/* tooltip css  */
+/* Tooltip container */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
 }
+
+/* Tooltip text (hidden by default) */
+.tooltip-text {
+  position: absolute;
+  top: 50%;
+  left: 110%;
+  /* Adjust position to the right */
+  transform: translateY(-50%);
+  background-color: black;
+  color: white;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 10;
+}
+
+/* Show tooltip on hover */
+.tooltip-container:hover .tooltip-text {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* 2ndcol bottom css */
+
+/* Container Styling */
+.cost-query-card {
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: var(--Base-White, #FFF);
+}
+
+/* Top Section: Cost/Query */
+.cost-query-text {
+  color: var(--Gray-500, #717680);
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  /* 142.857% */
+}
+
+/* Bottom Section: Cost Value */
+.cost-value {
+  color: var(--Gray-800, #252B37);
+  font-family: Inter, sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 38px;
+  /* 126.667% */
+}
+
+/* Right Section: Arrow Button */
+.arrow-button {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--Gray-500, #717680);
+  border: none;
+  background-color: #e8e8e8;
+  cursor: pointer;
+}
+
+/* Right Section: Percentage Text */
+.percentage-text {
+  color: green;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.cost-query-card {
+  margin-bottom: 20px;
+  /* Ensures consistent bottom gap */
+}
+
+.analytics {
+  color: var(--Gray-700, #414651);
+
+  /* Text sm/Semibold */
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  /* 142.857% */
+}
+
+
+.list-item-layout {
+  display: flex;
+  padding: 6px 4px;
+  align-items: center;
+  gap: 4px;
+  align-self: stretch;
+  border-radius: 6px;
+  width: 288px;
+  margin-top: 8px;
+}
+
+.yesterday-header {
+  color: var(--Gray-700, #414651);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  /* 142.857% */
+  margin-bottom: 12px;
+}
+
+.list-item-text {
+  color: var(--Gray-700, #414651);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.bordered-div {
+  height: 1px;
+  align-self: stretch;
+  border-radius: 10px;
+  background: var(--Gray-200, #E9EAEB);
+  /* Light gray background */
+}
+
+
+/* Styling for New Chat Section */
+.new-chat {
+  display: flex;
+  width: 240px;
+  padding: 10px 14px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  border: 1px solid var(--Gray-300, #D5D7DA);
+  background: var(--Base-White, #FFF);
+  box-shadow: 0px 0px 0px 1px rgba(10, 13, 18, 0.18) inset, 0px -2px 0px 0px rgba(10, 13, 18, 0.05) inset, 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  cursor: pointer;
+  position: relative;
+  /* Position for stacking */
+}
+
+/* Search Icon */
+.search-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 43px;
+  width: 60px;
+
+  border-radius: 8px;
+  border: 1px solid var(--Gray-300, #D5D7DA);
+  background: var(--Base-White, #FFF);
+
+  /* Shadows/shadow-xs-skeuomorphic */
+  box-shadow: 0px 0px 0px 1px rgba(10, 13, 18, 0.18) inset, 0px -2px 0px 0px rgba(10, 13, 18, 0.05) inset, 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+}
+
+/* Styling for Search Bar */
+.search-bar {
+  position: absolute;
+  top: 0;
+  left: -1px;
+  /* Adjust this to the left side of the "New Chat" */
+  transition: left 0.3s ease;
+  z-index: 100;
+}
+
+.search-bar.d-flex {
+  align-items: center;
+  width: 240px;
+  height: 46px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--Gray-300, #D5D7DA);
+  background: var(--Base-White, #FFF);
+  box-shadow: 0px 0px 0px 1px rgba(10, 13, 18, 0.18) inset, 0px -2px 0px 0px rgba(10, 13, 18, 0.05) inset, 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+}
+
+.search-bar input {
+  width: 50%;
+  border: none;
+  outline: none;
+  position: sticky;
+  background-color: transparent;
+}
+
 
 
 

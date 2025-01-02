@@ -1,0 +1,47 @@
+<div className="d-flex align-items-center mb-3">
+            {/* Search Bar with Lens Icon in Placeholder */}
+            <div
+              className="border d-flex align-items-center rounded px-2 flex-grow-1"
+              style={{ borderColor: "#d9d9d9" }}
+            >
+              <i className="bi bi-search text-muted me-2"></i>
+              <input
+                type="text"
+                className="form-control border-0"
+                placeholder="Search..."
+                style={{ boxShadow: "none" }}
+              />
+            </div>
+
+            {/* Filter Icon and Text */}
+            <div
+              className="border d-flex align-items-center rounded px-2 ms-3"
+              style={{
+                borderColor: "#d9d9d9",
+                height: "37px",
+                backgroundColor: "white",
+              }}
+            >
+              <i className="bi bi-filter text-muted me-2"></i>
+              <span>Filter</span>
+            </div>
+          </div>
+
+
+
+          in this code fiirstly i need <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+  <path d="M10.9155 12.0833V7.08333M8.41554 9.58333H13.4155M10.9155 16.6667C14.8276 16.6667 17.9989 13.4953 17.9989 9.58333C17.9989 5.67132 14.8276 2.5 10.9155 2.5C7.00352 2.5 3.83221 5.67132 3.83221 9.58333C3.83221 10.375 3.96208 11.1363 4.20168 11.8472C4.29185 12.1147 4.33693 12.2484 4.34506 12.3512C4.35309 12.4527 4.34702 12.5238 4.32192 12.6225C4.2965 12.7223 4.24037 12.8262 4.12812 13.034L2.76507 15.557C2.57064 15.9168 2.47343 16.0968 2.49519 16.2356C2.51414 16.3566 2.58533 16.4631 2.68985 16.5269C2.80985 16.6001 3.01329 16.579 3.42016 16.537L7.68768 16.0958C7.81691 16.0825 7.88153 16.0758 7.94042 16.0781C7.99835 16.0803 8.03924 16.0857 8.09573 16.0987C8.15317 16.112 8.22539 16.1398 8.36984 16.1954C9.15988 16.4998 10.0182 16.6667 10.9155 16.6667Z" stroke="#717680" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+</svg> along with text New Chat in center (display: flex;
+width: 240px;
+padding: 10px 14px;
+justify-content: center;
+align-items: center;
+gap: 4px;
+
+border-radius: 8px;
+border: 1px solid var(--Gray-300, #D5D7DA);
+background: var(--Base-White, #FFF);
+
+/* Shadows/shadow-xs-skeuomorphic */
+box-shadow: 0px 0px 0px 1px rgba(10, 13, 18, 0.18) inset, 0px -2px 0px 0px rgba(10, 13, 18, 0.05) 
+inset, 0px 1px 2px 0px rgba(16, 24, 40, 0.05);)   after this 8px gap then only search icon as above code and on click of search icon it should open search bar with lens icon and input field
